@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Explorer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>City Explorer</h1>
+        <nav>
+            <a href="#destinatii">Destinații</a>
+            <a href="#planifica">Planifică</a>
+            <a href="#recomandari">Recomandări</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Secțiunea Destinații -->
+        <section id="destinatii">
+            <h2>Destinații</h2>
+            <div class="grid-container">
+                <article class="card">
+                    <h3>Paris</h3>
+                    <p><strong>Țara:</strong> Franța</p>
+                    <p>Orașul luminilor, faimos pentru Turnul Eiffel și croaziere pe Sena.</p>
+                    <p><em>Durata recomandată: 4 zile</em></p>
+                </article>
+
+                <!-- Destinația evidențiată -->
+                <article class="card featured">
+                    <h3>Lisabona</h3>
+                    <p><strong>Țara:</strong> Portugalia</p>
+                    <p>Un oraș pitoresc pe coline, faimos pentru pasteis de nata.</p>
+                    <p><em>Durata recomandată: 3 zile</em></p>
+                </article>
+
+                <article class="card">
+                    <h3>Roma</h3>
+                    <p><strong>Țara:</strong> Italia</p>
+                    <p>O incursiune în istoria antică cu peisaje arhitecturale uimitoare.</p>
+                    <p><em>Durata recomandată: 5 zile</em></p>
+                </article>
+
+                <article class="card">
+                    <h3>Kyoto</h3>
+                    <p><strong>Țara:</strong> Japonia</p>
+                    <p>Inima culturii tradiționale japoneze, plină de temple și grădini zen.</p>
+                    <p><em>Durata recomandată: 6 zile</em></p>
+                </article>
+
+                <article class="card">
+                    <h3>New York</h3>
+                    <p><strong>Țara:</strong> Statele Unite</p>
+                    <p>Orașul care nu doarme niciodată, o metropolă vibrantă.</p>
+                    <p><em>Durata recomandată: 7 zile</em></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Secțiunea Planifică -->
+        <section id="planifica">
+            <h2>Planifică excursia</h2>
+            <form action="#" method="GET">
+                <div class="form-group">
+                    <label for="nume">Nume</label>
+                    <input type="text" id="nume" name="nume" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="destinatie">Destinație</label>
+                    <select id="destinatie" name="destinatie" required>
+                        <option value="" disabled selected>Alege...</option>
+                        <option value="paris">Paris</option>
+                        <option value="lisabona">Lisabona</option>
+                        <option value="roma">Roma</option>
+                        <option value="kyoto">Kyoto</option>
+                        <option value="new_york">New York</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="zile">Număr de zile</label>
+                    <input type="number" id="zile" name="zile" min="1" required>
+                </div>
+
+                <button type="submit">Planifică excursia</button>
+            </form>
+        </section>
+
+        <!-- Secțiunea Recomandări -->
+        <section id="recomandari">
+            <h2>Recomandări</h2>
+            <ul>
+                <li>Fă-ți o asigurare de călătorie înainte de a pleca.</li>
+                <li>Încearcă mereu mâncarea locală de la vânzătorii stradali recomandați.</li>
+                <li>Pregătește-ți încălțăminte foarte comodă pentru a explora pe jos.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Autor: Gabor Vladut &copy; 2026</p> 
+    </footer>
+</body>
+</html>
