@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Rezumat from './components/Rezumat.jsx'
 import { destinatii as destinatiiInitiale } from './data/destinatii.js'
-import { getNevizitate, totalZile, marcheazaVizitat, adaugaDestinatie } from './utils/destinatii.js'
+import { getNevizitate, totalZile, marcheazaVizitat, adaugaDestinatie, stergeDestinatie } from './utils/destinatii.js'
 import ListaDestinatii from './components/ListaDestinatii.jsx'
 import FormularDestinatie from './components/FormularDestinatie.jsx'
 import './App.css'
@@ -9,13 +9,9 @@ import './App.css'
 export default function App() {
     const [destinatii, setDestinatii] = useState(destinatiiInitiale)
 
-    const handleToggle = (id) => {
-        setDestinatii((curent) => marcheazaVizitat(curent, id))
-    }
-
-    const handleAdd = (destinatieNoua) => {
-        setDestinatii((curent) => adaugaDestinatie(curent, destinatieNoua))
-    }
+    const handleToggle = (id) => setDestinatii((curent) => marcheazaVizitat(curent, id))
+    const handleAdd = (destNoua) => setDestinatii((curent) => adaugaDestinatie(curent, destNoua))
+    const handleDelete = (id) => setDestinatii((curent) => stergeDestinatie(curent, id))
 
     return (
         <main>
@@ -26,7 +22,7 @@ export default function App() {
                 zile={totalZile(getNevizitate(destinatii))}
             />
             <FormularDestinatie onAdd={handleAdd} />
-            <ListaDestinatii destinatii={destinatii} onToggle={handleToggle} />
+            <ListaDestinatii destinatii={destinatii} onToggle={handleToggle} onDelete={handleDelete} />
         </main>
     )
 }
