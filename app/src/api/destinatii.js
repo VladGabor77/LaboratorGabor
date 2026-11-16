@@ -1,0 +1,35 @@
+const API_URL = 'http://localhost:3001'
+
+export async function getDestinatii(pagina = 1) {
+    // Cerem doar pagina dorită, câte 20 pe pagină
+    const response = await fetch(`${API_URL}/destinatii?_page=${pagina}&_per_page=20`)
+    if (!response.ok) {
+        throw new Error(`Serverul a răspuns cu ${response.status}`)
+    }
+    // Răspunsul este acum un obiect cu .data și .pages, nu doar un tablou
+    return response.json()
+}
+
+export async function postDestinatie(d) {
+    const response = await fetch(`${API_URL}/destinatii`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(d),
+    })
+    if (!response.ok) {
+        throw new Error(`Serverul a răspuns cu ${response.status}`)
+    }
+    return response.json()
+}
+
+export async function patchVizitat(id, vizitat) {
+    const response = await fetch(`${API_URL}/destinatii/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ vizitat })
+    })
+    if (!response.ok) {
+        throw new Error(`Serverul a răspuns cu ${response.status}`)
+    }
+    return response.json()
+}
